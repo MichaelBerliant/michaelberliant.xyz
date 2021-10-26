@@ -1,10 +1,54 @@
+<!DOCTYPE html>
 <html>
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    background-color: black;
+  }
+
+  .bg {
+    /* The image used */
+    background-image: url("background.gif");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @font-face {
+  font-family: 'Roboto-Medium';
+  src: url(Roboto-Medium.ttf);
+  }
+
+  .p {
+    color:white;
+    font-family: 'Roboto-Medium', sans-serif;
+    font-size: 50px;
+    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 3s;
+  }
+
+  .p:hover {
+    background-color: #cc1f36;
+  }
+  </style>
 </head>
 
 <body>
-  <p>Good Evening</p>
+<div class="bg">
+  <p class="p"><a href="https://chrome.google.com/webstore/detail/additional-abilities/gekfihojlndeajamgfgjhohldbapjdgi?hl=en&authuser=1" class="p">/MY CHROME EXTENSION/</a></p>
+</div>
 </body>
-
 </html>
