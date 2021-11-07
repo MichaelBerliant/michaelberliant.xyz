@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Michael Berliant</title>
+    <link rel="stylesheet" href="./index.css" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"
+      integrity="sha512-zhHQR0/H5SEBL3Wn6yYSaTTZej12z0hVZKOv3TwCUXT1z5qeqGcXJLLrbERYRScEDDpYIJhPC1fk31gqR783iQ=="
+      crossorigin="anonymous" defer>
+    </script>
+    <script src="./index.js" defer></script>
+
+    <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      background-image: linear-gradient(to bottom right, #fafafa, #404040);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    @font-face {
+    font-family: 'Roboto Regular';
+      src: url(./Roboto-Regular.ttf);
+    }
+    .p {
+      color: black;
+      font-weight: bold;
+      font-size: 55px;
+      text-decoration: none;
+      position: absolute;
+      top: 38%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+    }
+    .p2, .p3, .p4, .p5 {
+      color: black;
+      font-family: 'Roboto Regular', sans-serif;
+      font-size: 25px;
+      text-decoration: none;
+      transition: 0.2s;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    .t {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .p2:hover{
+      color: red;
+      text-decoration: underline;
+    }
+    .p3:hover{
+      color: yellow;
+      text-decoration: underline;
+    }
+    .p4:hover{
+      color: fuchsia;
+      text-decoration: underline;
+    }
+    .p5:hover{
+      color: cyan;
+      text-decoration: underline;
+    }
+    .checkerboard {
+      width: 90%;
+      height: 25%;
+      position: absolute;
+      top: 77%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-image: linear-gradient(
+          45deg,
+          #878787 25%,
+          transparent 25%,
+          transparent 75%,
+          #878787 75%,
+          #878787
+        ),
+        linear-gradient(
+          -45deg,
+          #878787 25%,
+          transparent 25%,
+          transparent 75%,
+          #878787 75%,
+          #878787
+        );
+      background-size: 55px 55px;
+      background-repeat: repeat;
+    }
+    </style>
+  </head>
+
+  <body>
+      <div style="text-align:center;">
+        <canvas id="glcanvas" width="350" height="350"></canvas>
+      </div>
+      <p class="p" id="M">Michael Berliant</p>
+      <table class="t">
+        <tr>
+          <td><a href="./myskills.html" class="p2">my skills</a></td>
+          <td><a href="./myprojects.html" class="p3">my projects</a></td>
+          <td><a href="https://www.linkedin.com/in/michael-berliant-a9b2b2224/" target="_blank" class="p4">linkedin</a></td>
+          <td><a href="https://github.com/MichaelBerliant" target="_blank" class="p5">github</a></td>
+        </tr>
+      </table>
+      <div class="checkerboard"></div>
+  </body>
+</html>
