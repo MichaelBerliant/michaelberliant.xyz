@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/x-icon" href="mb.png">
+    <title>PORTFOLIO</title>
+    <style>
+      body {
+        background-color: #0040ff;
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+      }
+      .container {
+        position: relative;
+        top: 5%;
+        width: 100%;
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 60px;
+      }
+      .navigation {
+        position: fixed;
+        bottom: 2%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      li {
+        float: left;
+      }
+      li a {
+        font-family: 'Roboto Regular', sans-serif;
+        display: block;
+        font-size: 2.1vmin;
+        color: #ff9900;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        transition: 0.2s;
+      }
+      li a:hover {
+        text-decoration: underline;
+      }
+      .title {
+        text-decoration: none;
+        text-align: center;
+        font-family: 'Roboto Regular', sans-serif;
+        color: #ff9900;
+        font-size: 3vmin;
+      }
+      .info {
+        text-decoration: none;
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: center;
+        font-family: 'Roboto Regular', sans-serif;
+        color: #ff9900;
+        font-size: 2.5vmin;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navigation">
+      <ul>
+        <li><a href="./b.html">my skills</a></li>
+        <li><a href="./a.html">home page</a></li>
+        <li><a href="https://www.linkedin.com/in/michael-berliant-a9b2b2224/" target="_blank">linkedin</a></li>
+        <li><a href="https://github.com/MichaelBerliant" target="_blank">github</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <div>
+        <p class="title"><a class="title" href="https://github.com/MichaelBerliant/Binary-Function-Grapher" target="_blank">Binary Function Grapher &#8599;</a></p>
+        <image src="2in1out.png" width=50% height=auto style="  display: block; margin-left: auto; margin-right: auto;"></image>
+        <p class="info">Made with HTML, CSS, JavaScript and Three.js. This is an application which takes an input function that is of f(x,y), and graphs it. The graph can be viewed from any angle, its scope can be input, and it supports a plethora of math functions, including a custom made sigma function.</p>
+      </div>
+      <div>
+        <p class="title"><a class="title" href="https://github.com/MichaelBerliant/Additional-Abilities" target="_blank">Additional Abilities &#8599;</a></p>
+        <p class="info"><a class="info" href="https://chrome.google.com/webstore/detail/additional-abilities/gekfihojlndeajamgfgjhohldbapjdgi?hl=en&authuser=0" target="_blank">View In Chrome Web Store &#8599;</a></p>
+        <p class="info">A chrome extension made with HTML, CSS, JavaScript and JQuery. Allows for the user to multiply a text on a webpage a desired amount of times, or add text to a clipboard, or spawn a Wikipedia page about the text. This is published on the Chrome Web Store and was downloaded world wide multiple times.</p>
+      </div>
+    </div>
+  </body>
+</html>

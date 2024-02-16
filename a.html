@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/x-icon" href="mb.png">
+    <title>HOME</title>
+    <style>
+      body {
+        background-color: #0040ff;
+        margin: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform-style: preserve-3d;
+        transform: perspective(150px);
+      }
+      .box {
+        position: relative;
+        width: 150px;
+        height: 100px;
+        background-color: transparent;
+        transform-style: preserve-3d;
+        transform: rotateX(-15deg) rotateY(0deg);
+        transition: 1s transform;
+      }
+      .side {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        cursor: pointer;
+      }
+      .s1 {
+        transform: rotateY(0deg) translateZ(250px);
+      }
+      .s2 {
+        transform: rotateY(60deg) translateZ(250px);
+      }
+      .s3 {
+        transform: rotateY(120deg) translateZ(250px);
+      }
+      .s4 {
+        transform: rotateY(180deg) translateZ(250px);
+      }
+      .s5 {
+        transform: rotateY(240deg) translateZ(250px);
+      }
+      .s6 {
+        transform: rotateY(300deg) translateZ(250px);
+      }
+      .inners {
+        font-family: 'Roboto Regular', sans-serif;
+        display: block;
+        color: #ff9900;
+        text-align: center;
+        font-size: 4vmin;
+        -moz-transform: scale(-1, 1);
+        -webkit-transform: scale(-1, 1);
+        -o-transform: scale(-1, 1);
+        -ms-transform: scale(-1, 1);
+        transform: scale(-1, 1);
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      li {
+        float: left;
+      }
+      li a {
+        font-family: 'Roboto Regular', sans-serif;
+        font-size: 2.1vmin;
+        display: block;
+        color: #ff9900;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        transition: 0.2s;
+      }
+      li a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="position: absolute; bottom: 2%; width: 100%; display: flex; justify-content: center; align-items: center;">
+      <ul>
+        <li><a href="./b.html">my skills</a></li>
+        <li><a href="./c.html">my portfolio</a></li>
+        <li><a href="https://www.linkedin.com/in/michael-berliant-a9b2b2224/" target="_blank">linkedin</a></li>
+        <li><a href="https://github.com/MichaelBerliant" target="_blank">github</a></li>
+      </ul>
+    </div>
+    <div class="box">
+      <div class="side s1"><p class="inners">Michael<p></div>
+      <div class="side s2"><p class="inners">Berliant<p></div>
+      <div class="side s3"><p class="inners">Website<p></div>
+      <div class="side s4"><p class="inners">Welcome<p></div>
+      <div class="side s5"><p class="inners">To<p></div>
+      <div class="side s6"><p class="inners">The<p></div>
+    </div>
+    <script type="text/javascript">
+      let box = document.querySelector('.box');
+      let rotation = 0;
+
+      function rotateCarousel() {
+        rotation += 60;
+        if (rotation >= 360) {
+          rotation = 0;
+        }
+        box.style.transform = `rotateX(-15deg) rotateY(-${rotation}deg)`;
+      }
+
+      setInterval(rotateCarousel, 1000);
+    </script>
+  </body>
+</html>
