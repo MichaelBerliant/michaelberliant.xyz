@@ -5,7 +5,7 @@
     <title>HOME</title>
     <style>
       body {
-        background-color: #0040ff;
+        background-image: linear-gradient(to top, #0400ff,white);
         margin: 0;
         width: 100%;
         height: 100vh;
@@ -13,15 +13,15 @@
         justify-content: center;
         align-items: center;
         transform-style: preserve-3d;
-        transform: perspective(150px);
+        transform: perspective(450px);
       }
       .box {
         position: relative;
-        width: 150px;
-        height: 100px;
+        width: 15vmin;
+        height: 10vmin;
         background-color: transparent;
         transform-style: preserve-3d;
-        transform: rotateX(-15deg) rotateY(0deg);
+        transform: rotateX(12deg) rotateY(0deg) rotateZ(0deg);
         transition: 1s transform;
       }
       .side {
@@ -56,14 +56,9 @@
       .inners {
         font-family: 'Roboto Regular', sans-serif;
         display: block;
-        color: #ff9900;
+        color: black;
         text-align: center;
-        font-size: 4vmin;
-        -moz-transform: scale(-1, 1);
-        -webkit-transform: scale(-1, 1);
-        -o-transform: scale(-1, 1);
-        -ms-transform: scale(-1, 1);
-        transform: scale(-1, 1);
+        font-size: 3vmin;
       }
       ul {
         list-style-type: none;
@@ -78,7 +73,7 @@
         font-family: 'Roboto Regular', sans-serif;
         font-size: 2.1vmin;
         display: block;
-        color: #ff9900;
+        color: white;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
@@ -99,26 +94,38 @@
       </ul>
     </div>
     <div class="box">
-      <div class="side s1"><p class="inners">Michael<p></div>
-      <div class="side s2"><p class="inners">Berliant<p></div>
-      <div class="side s3"><p class="inners">Website<p></div>
-      <div class="side s4"><p class="inners">Welcome<p></div>
-      <div class="side s5"><p class="inners">To<p></div>
-      <div class="side s6"><p class="inners">The<p></div>
+      <div class="side s1"><p class="inners">Welcome<p></div>
+      <div class="side s2"><p class="inners">To<p></div>
+      <div class="side s3"><p class="inners">The<p></div>
+      <div class="side s4"><p class="inners">Michael<p></div>
+      <div class="side s5"><p class="inners">Berliant<p></div>
+      <div class="side s6"><p class="inners">Website<p></div>
     </div>
     <script type="text/javascript">
       let box = document.querySelector('.box');
       let rotation = 0;
+      let tilt = 12;
+      let check = true;
 
       function rotateCarousel() {
         rotation += 60;
-        if (rotation >= 360) {
-          rotation = 0;
+        if(check == true){
+          if(tilt == -12){
+            check = false
+          }
+          tilt -= 4
         }
-        box.style.transform = `rotateX(-15deg) rotateY(-${rotation}deg)`;
+        if(check == false){
+          if(tilt == 12){
+            check = true
+          }
+          tilt += 4
+        }
+
+        box.style.transform = `rotateX(${tilt}deg) rotateY(-${rotation}deg) rotateZ(${tilt}deg)`;
       }
 
-      setInterval(rotateCarousel, 1000);
+      setInterval(rotateCarousel, 800);
     </script>
   </body>
 </html>
