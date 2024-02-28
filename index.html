@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/x-icon" href="mb.png">
     <title>HOME</title>
     <style>
       body {
-        background-image: linear-gradient(to top, #0400ff,white);
+        background-image: url('world.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
         margin: 0;
         width: 100%;
         height: 100vh;
@@ -17,48 +24,15 @@
       }
       .box {
         position: relative;
-        width: 15vmin;
-        height: 10vmin;
-        background-color: transparent;
+        width: 45vmin;
+        height: 45vmin;
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: center;
+        background-attachment: fixed;
         transform-style: preserve-3d;
         transform: rotateX(12deg) rotateY(0deg) rotateZ(0deg);
         transition: 1s transform;
-      }
-      .side {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        cursor: pointer;
-      }
-      .s1 {
-        transform: rotateY(0deg) translateZ(250px);
-      }
-      .s2 {
-        transform: rotateY(60deg) translateZ(250px);
-      }
-      .s3 {
-        transform: rotateY(120deg) translateZ(250px);
-      }
-      .s4 {
-        transform: rotateY(180deg) translateZ(250px);
-      }
-      .s5 {
-        transform: rotateY(240deg) translateZ(250px);
-      }
-      .s6 {
-        transform: rotateY(300deg) translateZ(250px);
-      }
-      .inners {
-        font-family: 'Roboto Regular', sans-serif;
-        display: block;
-        color: black;
-        text-align: center;
-        font-size: 3vmin;
       }
       ul {
         list-style-type: none;
@@ -70,12 +44,13 @@
         float: left;
       }
       li a {
-        font-family: 'Roboto Regular', sans-serif;
-        font-size: 2.1vmin;
+        font-weight: 300;
+        font-family: "Heebo", sans-serif;
+        font-size: 1.8vmin;
         display: block;
-        color: white;
+        color: black;
         text-align: center;
-        padding: 14px 16px;
+        padding: 10px 16px;
         text-decoration: none;
         transition: 0.2s;
       }
@@ -85,43 +60,38 @@
     </style>
   </head>
   <body>
-    <div style="position: absolute; bottom: 2%; width: 100%; display: flex; justify-content: center; align-items: center;">
+    <div style="position: absolute; top: 0%; width: 100%; display: flex; justify-content: center; align-items: center;">
       <ul>
-        <li><a href="./b.html">my skills</a></li>
-        <li><a href="./c.html">my portfolio</a></li>
-        <li><a href="https://www.linkedin.com/in/michael-berliant-a9b2b2224/" target="_blank">linkedin</a></li>
-        <li><a href="https://github.com/MichaelBerliant" target="_blank">github</a></li>
+        <li><a href="./b.html">Skills</a></li>
+        <li><a href="./c.html">Portfolio</a></li>
+        <li><p>&emsp;&emsp;</p></li>
+        <li><a href="https://www.linkedin.com/in/michael-berliant-a9b2b2224/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/MichaelBerliant" target="_blank">GitHub</a></li>
       </ul>
     </div>
     <div class="box">
-      <div class="side s1"><p class="inners">Welcome<p></div>
-      <div class="side s2"><p class="inners">To<p></div>
-      <div class="side s3"><p class="inners">The<p></div>
-      <div class="side s4"><p class="inners">Michael<p></div>
-      <div class="side s5"><p class="inners">Berliant<p></div>
-      <div class="side s6"><p class="inners">Website<p></div>
     </div>
     <script type="text/javascript">
       let box = document.querySelector('.box');
       let rotation = 0;
       let tilt = 12;
       let check = true;
-
+      let images = ['./assets/home.png', './assets/photo.jpg', './assets/welcome.png', './assets/uottawa.jpg'];
+      box.style.backgroundImage = `url(${images[0]})`;
+      images.push(images.shift());
       function rotateCarousel() {
         rotation += 60;
-        if(check == true){
-          if(tilt == -12){
-            check = false
-          }
-          tilt -= 4
+        if (rotation % 180 === 0) {
+          box.style.backgroundImage = `url(${images[0]})`;
+          images.push(images.shift());
         }
-        if(check == false){
-          if(tilt == 12){
-            check = true
-          }
-          tilt += 4
+        if (check) {
+          if (tilt == -12) check = false;
+          tilt -= 4;
+        } else {
+          if (tilt == 12) check = true;
+          tilt += 4;
         }
-
         box.style.transform = `rotateX(${tilt}deg) rotateY(-${rotation}deg) rotateZ(${tilt}deg)`;
       }
 
